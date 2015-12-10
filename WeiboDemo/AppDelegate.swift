@@ -9,14 +9,36 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WeiboSDKDelegate {
 
     var window: UIWindow?
 
+    var wbCurrentUserID: String?
+    var wbRefreshToken: String?
+    var wbToken: String? {
+        didSet {
+            NSNotificationCenter.defaultCenter().postNotificationName(WBTokenDidSetNotification, object: nil)
+        }
+    }
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        WeiboSDK.enableDebugMode(true)
+        WeiboSDK.registerApp(kAppKey)
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+//        window?.rootViewController = XLTabBarController()
+        window?.rootViewController = XLWelcomeViewController()
+        
+        window?.tintColor = UIColor(red: 254/255.0, green: 129/255.0, blue: 0, alpha: 1.0)
+        
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -104,6 +126,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 abort()
             }
+        }
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return WeiboSDK.handleOpenURL(url, delegate: self)
+    }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        return WeiboSDK.handleOpenURL(url, delegate: self)
+    }
+    
+    func didReceiveWeiboRequest(request: WBBaseRequest!) {
+        print("Receive Weibo Request.")
+    }
+    
+    func didReceiveWeiboResponse(response: WBBaseResponse!) {
+        print("Receive Weibo Response.")
+        if let authResponse = response as? WBAuthorizeResponse {
+            
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            
+            userDefaults.setObject(authResponse.accessToken, forKey: "accessToken")
+            userDefaults.setObject(authResponse.userID, forKey: "userID")
+            userDefaults.setObject(authResponse.refreshToken, forKey: "refreshToken")
+            userDefaults.setObject(authResponse.expirationDate, forKey: "expirationDate")
+            userDefaults.synchronize()
+            
+            self.wbToken = authResponse.accessToken
+            self.wbCurrentUserID = authResponse.userID
+            self.wbRefreshToken = authResponse.refreshToken
+//
+//            print("The accessToken is: \(self.wbToken ?? "Failed to get")\nThe User ID is: \(self.wbCurrentUserID ?? "Failed to get")")
+            
         }
     }
 

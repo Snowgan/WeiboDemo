@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3801CAC51C0B027600613AC5 /* XLWeiboCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3801CAC41C0B027600613AC5 /* XLWeiboCell.swift */; };
 		381DA6F61BFA0E9B00BD232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DA6F51BFA0E9B00BD232C /* AppDelegate.swift */; };
-		381DA6F81BFA0E9B00BD232C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DA6F71BFA0E9B00BD232C /* ViewController.swift */; };
 		381DA6FB1BFA0E9B00BD232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381DA6F91BFA0E9B00BD232C /* Main.storyboard */; };
 		381DA6FE1BFA0E9B00BD232C /* WeiboDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381DA6FC1BFA0E9B00BD232C /* WeiboDemo.xcdatamodeld */; };
 		381DA7001BFA0E9B00BD232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381DA6FF1BFA0E9B00BD232C /* Assets.xcassets */; };
 		381DA7031BFA0E9B00BD232C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381DA7011BFA0E9B00BD232C /* LaunchScreen.storyboard */; };
 		381DA70E1BFA0E9B00BD232C /* WeiboDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DA70D1BFA0E9B00BD232C /* WeiboDemoTests.swift */; };
 		381DA7191BFA0E9C00BD232C /* WeiboDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DA7181BFA0E9C00BD232C /* WeiboDemoUITests.swift */; };
+		381DA7281BFB7B7B00BD232C /* XLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DA7271BFB7B7B00BD232C /* XLTabBarController.swift */; };
+		381DA72A1BFCB7C500BD232C /* XLTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DA7291BFCB7C500BD232C /* XLTabBar.swift */; };
+		38CB24DC1C0AE58000BAF14E /* XLHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB24DB1C0AE58000BAF14E /* XLHomeTableViewController.swift */; };
+		38CB24E31C0B016A00BAF14E /* XLWeiboCellOriginalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB24E21C0B016900BAF14E /* XLWeiboCellOriginalView.swift */; };
+		38DE7A2B1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE7A2A1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift */; };
+		38DE7A2D1C0B1EE30044068B /* XLWeibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE7A2C1C0B1EE30044068B /* XLWeibo.swift */; };
+		38DE7A2F1C0B2D7C0044068B /* XLCommonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE7A2E1C0B2D7C0044068B /* XLCommonFile.swift */; };
+		38DE7A321C0B326A0044068B /* XLWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE7A311C0B326A0044068B /* XLWelcomeViewController.swift */; };
+		38DE7A341C0D45590044068B /* XLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE7A331C0D45580044068B /* XLWelcomeView.swift */; };
+		38DE7A361C10AF510044068B /* XLWeiboAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE7A351C10AF510044068B /* XLWeiboAPI.swift */; };
+		4EA6DEBC91BE1320A5F79B50 /* Pods_WeiboDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D9F1C99993AF94B736FA1A /* Pods_WeiboDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3801CAC41C0B027600613AC5 /* XLWeiboCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWeiboCell.swift; sourceTree = "<group>"; };
 		381DA6F21BFA0E9B00BD232C /* WeiboDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiboDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		381DA6F51BFA0E9B00BD232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		381DA6F71BFA0E9B00BD232C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		381DA6FA1BFA0E9B00BD232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		381DA6FD1BFA0E9B00BD232C /* WeiboDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeiboDemo.xcdatamodel; sourceTree = "<group>"; };
 		381DA6FF1BFA0E9B00BD232C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +60,20 @@
 		381DA7141BFA0E9B00BD232C /* WeiboDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		381DA7181BFA0E9C00BD232C /* WeiboDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboDemoUITests.swift; sourceTree = "<group>"; };
 		381DA71A1BFA0E9C00BD232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		381DA7261BFA0EEE00BD232C /* WeiboDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeiboDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		381DA7271BFB7B7B00BD232C /* XLTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLTabBarController.swift; sourceTree = "<group>"; };
+		381DA7291BFCB7C500BD232C /* XLTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLTabBar.swift; sourceTree = "<group>"; };
+		38CB24DB1C0AE58000BAF14E /* XLHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLHomeTableViewController.swift; sourceTree = "<group>"; };
+		38CB24E21C0B016900BAF14E /* XLWeiboCellOriginalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWeiboCellOriginalView.swift; sourceTree = "<group>"; };
+		38D9F1C99993AF94B736FA1A /* Pods_WeiboDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiboDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DE7A2A1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWeiboCellRightTopButton.swift; sourceTree = "<group>"; };
+		38DE7A2C1C0B1EE30044068B /* XLWeibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWeibo.swift; sourceTree = "<group>"; };
+		38DE7A2E1C0B2D7C0044068B /* XLCommonFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLCommonFile.swift; sourceTree = "<group>"; };
+		38DE7A311C0B326A0044068B /* XLWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWelcomeViewController.swift; sourceTree = "<group>"; };
+		38DE7A331C0D45580044068B /* XLWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWelcomeView.swift; sourceTree = "<group>"; };
+		38DE7A351C10AF510044068B /* XLWeiboAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWeiboAPI.swift; sourceTree = "<group>"; };
+		5B5676C0E73E531416CF4D04 /* Pods-WeiboDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiboDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiboDemo/Pods-WeiboDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A12DC1B5498925FB72793EFA /* Pods-WeiboDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiboDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiboDemo/Pods-WeiboDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA6DEBC91BE1320A5F79B50 /* Pods_WeiboDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B05A8C6377BB4F66F907767 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B5676C0E73E531416CF4D04 /* Pods-WeiboDemo.debug.xcconfig */,
+				A12DC1B5498925FB72793EFA /* Pods-WeiboDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		381DA6E91BFA0E9B00BD232C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +118,8 @@
 				381DA70C1BFA0E9B00BD232C /* WeiboDemoTests */,
 				381DA7171BFA0E9C00BD232C /* WeiboDemoUITests */,
 				381DA6F31BFA0E9B00BD232C /* Products */,
+				2B05A8C6377BB4F66F907767 /* Pods */,
+				E39D73DFC172A8D0EE70F6F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +136,16 @@
 		381DA6F41BFA0E9B00BD232C /* WeiboDemo */ = {
 			isa = PBXGroup;
 			children = (
-				381DA6F51BFA0E9B00BD232C /* AppDelegate.swift */,
-				381DA6F71BFA0E9B00BD232C /* ViewController.swift */,
+				38DE7A301C0B32110044068B /* Main */,
+				38CB24DF1C0AF6FC00BAF14E /* HOME */,
 				381DA6F91BFA0E9B00BD232C /* Main.storyboard */,
 				381DA6FF1BFA0E9B00BD232C /* Assets.xcassets */,
 				381DA7011BFA0E9B00BD232C /* LaunchScreen.storyboard */,
 				381DA7041BFA0E9B00BD232C /* Info.plist */,
+				381DA7261BFA0EEE00BD232C /* WeiboDemo-Bridging-Header.h */,
 				381DA6FC1BFA0E9B00BD232C /* WeiboDemo.xcdatamodeld */,
+				38DE7A2E1C0B2D7C0044068B /* XLCommonFile.swift */,
+				38DE7A351C10AF510044068B /* XLWeiboAPI.swift */,
 			);
 			path = WeiboDemo;
 			sourceTree = "<group>";
@@ -128,6 +168,38 @@
 			path = WeiboDemoUITests;
 			sourceTree = "<group>";
 		};
+		38CB24DF1C0AF6FC00BAF14E /* HOME */ = {
+			isa = PBXGroup;
+			children = (
+				38CB24DB1C0AE58000BAF14E /* XLHomeTableViewController.swift */,
+				3801CAC41C0B027600613AC5 /* XLWeiboCell.swift */,
+				38CB24E21C0B016900BAF14E /* XLWeiboCellOriginalView.swift */,
+				38DE7A2A1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift */,
+				38DE7A2C1C0B1EE30044068B /* XLWeibo.swift */,
+			);
+			name = HOME;
+			sourceTree = "<group>";
+		};
+		38DE7A301C0B32110044068B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				381DA6F51BFA0E9B00BD232C /* AppDelegate.swift */,
+				381DA7271BFB7B7B00BD232C /* XLTabBarController.swift */,
+				381DA7291BFCB7C500BD232C /* XLTabBar.swift */,
+				38DE7A311C0B326A0044068B /* XLWelcomeViewController.swift */,
+				38DE7A331C0D45580044068B /* XLWelcomeView.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		E39D73DFC172A8D0EE70F6F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38D9F1C99993AF94B736FA1A /* Pods_WeiboDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 381DA71D1BFA0E9C00BD232C /* Build configuration list for PBXNativeTarget "WeiboDemo" */;
 			buildPhases = (
+				C882DAF54372707E14943690 /* Check Pods Manifest.lock */,
 				381DA6EE1BFA0E9B00BD232C /* Sources */,
 				381DA6EF1BFA0E9B00BD232C /* Frameworks */,
 				381DA6F01BFA0E9B00BD232C /* Resources */,
+				497BDF5421E8988B286E294A /* Embed Pods Frameworks */,
+				4D9EF3AECD9BB25335AF2509 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,6 +265,7 @@
 		381DA6EA1BFA0E9B00BD232C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XL;
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Snowgan;
@@ -254,14 +330,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		497BDF5421E8988B286E294A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeiboDemo/Pods-WeiboDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D9EF3AECD9BB25335AF2509 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeiboDemo/Pods-WeiboDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C882DAF54372707E14943690 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		381DA6EE1BFA0E9B00BD232C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381DA6F81BFA0E9B00BD232C /* ViewController.swift in Sources */,
+				38CB24E31C0B016A00BAF14E /* XLWeiboCellOriginalView.swift in Sources */,
 				381DA6FE1BFA0E9B00BD232C /* WeiboDemo.xcdatamodeld in Sources */,
+				38DE7A341C0D45590044068B /* XLWelcomeView.swift in Sources */,
+				38DE7A321C0B326A0044068B /* XLWelcomeViewController.swift in Sources */,
+				38DE7A361C10AF510044068B /* XLWeiboAPI.swift in Sources */,
+				38DE7A2B1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift in Sources */,
+				38CB24DC1C0AE58000BAF14E /* XLHomeTableViewController.swift in Sources */,
 				381DA6F61BFA0E9B00BD232C /* AppDelegate.swift in Sources */,
+				38DE7A2D1C0B1EE30044068B /* XLWeibo.swift in Sources */,
+				3801CAC51C0B027600613AC5 /* XLWeiboCell.swift in Sources */,
+				381DA7281BFB7B7B00BD232C /* XLTabBarController.swift in Sources */,
+				381DA72A1BFCB7C500BD232C /* XLTabBar.swift in Sources */,
+				38DE7A2F1C0B2D7C0044068B /* XLCommonFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,23 +533,31 @@
 		};
 		381DA71E1BFA0E9C00BD232C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B5676C0E73E531416CF4D04 /* Pods-WeiboDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WeiboDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gxl.WeiboDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiboDemo/WeiboDemo-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		381DA71F1BFA0E9C00BD232C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A12DC1B5498925FB72793EFA /* Pods-WeiboDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WeiboDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gxl.WeiboDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiboDemo/WeiboDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -486,6 +628,7 @@
 				381DA71F1BFA0E9C00BD232C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		381DA7201BFA0E9C00BD232C /* Build configuration list for PBXNativeTarget "WeiboDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +637,7 @@
 				381DA7221BFA0E9C00BD232C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		381DA7231BFA0E9C00BD232C /* Build configuration list for PBXNativeTarget "WeiboDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +646,7 @@
 				381DA7251BFA0E9C00BD232C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
