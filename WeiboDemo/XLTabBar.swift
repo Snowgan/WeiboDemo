@@ -16,6 +16,8 @@ class XLTabBar: UITabBar {
         
         super.init(frame: frame)
         
+//        self.backgroundImage = UIImage(named: "tabbar_backgroud")
+        self.backgroundColor = UIColor.whiteColor()
         composeButton = UIButton()
         composeButton.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: .Normal)
         composeButton.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: .Highlighted)
