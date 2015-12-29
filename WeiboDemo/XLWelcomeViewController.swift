@@ -132,8 +132,8 @@ class XLWelcomeViewController: UIViewController {
         queryDic["access_token"] = NSUserDefaults.standardUserDefaults().objectForKey("accessToken")!
         queryDic["uid"] = NSUserDefaults.standardUserDefaults().objectForKey("userID")!
         XLWeiboAPI.sharedWeiboAPI.requestWithURL(urlString, params: queryDic) { (json) -> () in
-            print("\(json["profile_image_url"])")
-            self.setupView(self.profileView, withImageURLString: json["profile_image_url"].string!)
+            print("\(json["avatar_large"])")
+            self.setupView(self.profileView, withImageURLString: json["avatar_large"].string!)
         }
     }
     
