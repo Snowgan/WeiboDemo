@@ -8,17 +8,24 @@
 
 import Foundation
 
-//UI
+// UI
 let windowFrame = UIScreen.mainScreen().bounds
 let bgColor = UIColor(red: 246.0/255.0, green: 246.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+let actionTextColor = UIColor(red: 127.0/255.0, green: 127.0/255.0, blue: 127.0/255.0, alpha: 1.0)
+let retweetColor = UIColor(red: 237.0/255.0, green: 237.0/255.0, blue: 237.0/255.0, alpha: 1.0)
 let windowCenterX = windowFrame.width / 2.0
-let kWeiboCellMargin = 10
-let kWeiboCellInset = 7
+let kWeiboCellMargin: CGFloat = 10.0
+let kWeiboCellInset: CGFloat = 7.0
+let bodyFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+let subHeadFont = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
 
-//Weibo API data
+// Table View
+let kXLHomeCellIdentifier = "homeTableCell"
+
+// Weibo API data
 let kAppKey = "2790170142"
 
-//Notification
+// Notification
 let WBTokenDidSetNotification = "WBTokenDidSet"
 
 // MARK: - Globle Functions
