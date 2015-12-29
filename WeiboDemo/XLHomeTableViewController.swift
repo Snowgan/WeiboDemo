@@ -10,6 +10,10 @@ import UIKit
 
 class XLHomeTableViewController: UITableViewController {
     
+//    var isLogin = false
+    
+    var homeStatuses = XLMultiStatus()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +25,30 @@ class XLHomeTableViewController: UITableViewController {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(normalImage: UIImage(named: "navigationbar_friendsearch"), highLightedImage: UIImage(named: "navigationbar_friendsearch_highlighted"), target: self, action: "")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(normalImage: UIImage(named: "navigationbar_pop"), highLightedImage: UIImage(named: "navigationbar_pop_highlighted"), target: self, action: "")
+        
+        self.tableView.registerClass(XLWeiboCell.self, forCellReuseIdentifier: kXLHomeCellIdentifier)
+        
+        self.tableView.separatorStyle = .None
+//        self.tableView.separatorInset = UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
+        
+        self.tableView.backgroundColor = bgColor
+        
+//        if isLogin {
+//            
+//        }
+        
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        var queryDic = [String: AnyObject]()
+        queryDic["access_token"] = NSUserDefaults.standardUserDefaults().objectForKey("accessToken")!
+        XLWeiboAPI.sharedWeiboAPI.requestWithURL(urlString, params: queryDic) { (json) -> () in
+            print("\(json)")
+            self.homeStatuses = XLMultiStatus(withJSON: json)
+//            print(self.homeStatuses.statusArr)
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
+        }
         
     }
 
@@ -35,16 +63,30 @@ class XLHomeTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return homeStatuses.statusArr.count
     }
 
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(kXLHomeCellIdentifier, forIndexPath: indexPath) as! XLWeiboCell
+        let row = indexPath.row
+        cell.status = homeStatuses.statusArr[row]
+        cell.layout = homeStatuses.statusLayoutArr[row]
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let cellH = homeStatuses.statusLayoutArr[indexPath.row].height
+        print(cellH)
+        return cellH + 31 + 7
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
