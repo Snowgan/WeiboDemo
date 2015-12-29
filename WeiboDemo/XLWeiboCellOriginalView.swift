@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+import Kingfisher
 
 class XLWeiboCellOriginalView: UIView {
 
@@ -18,8 +17,21 @@ class XLWeiboCellOriginalView: UIView {
     var textView: UITextView!
     var rightTopButton: XLWeiboCellRightTopButton!
     
+    var status: XLOriginalStatus! {
+        didSet {
+            setupStatus(status)
+        }
+    }
+    var origViewLayout: XLWeiboCellOriginalLayout! {
+        didSet {
+            setupLayout(origViewLayout)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        self.backgroundColor = UIColor.whiteColor()
         
         //Profile Image
         let proImage = UIImageView()
@@ -38,6 +50,10 @@ class XLWeiboCellOriginalView: UIView {
         
         //Text
         let textV = UITextView()
+        textV.editable = false
+        textV.scrollEnabled = false
+        textV.textContainerInset = UIEdgeInsetsZero
+        textV.textContainer.lineFragmentPadding = 0
         self.addSubview(textV)
         textView = textV
         
@@ -51,11 +67,40 @@ class XLWeiboCellOriginalView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func setupViewFrame() {
+    func setupStatus(status: XLOriginalStatus) {
         
-        profileImage.frame = CGRect(x: kWeiboCellMargin, y: kWeiboCellMargin, width: 30, height: 30)
+        profileImage.kf_setImageWithURL(NSURL(string: status.profileURLString)!)
         
+        nameLabel.text = status.nameString
         
+        sourceLable.text = status.source
+        
+        textView.text = status.text
+        
+    }
+    
+    func setupLayout(layout: XLWeiboCellOriginalLayout) {
+        
+        profileImage.frame = layout.profileImageFrame
+        profileImage.layer.cornerRadius = layout.profileImageFrame.width/2
+        profileImage.layer.masksToBounds = true
+        
+        nameLabel.font = layout.nameLabelLayout.font
+        
+        nameLabel.frame = layout.nameLabelLayout.frame
+        
+        sourceLable.font = layout.sourceLabelLayout.font
+        
+        sourceLable.frame = layout.sourceLabelLayout.frame
+        
+        textView.font = layout.textViewLayout.font
+        
+        textView.frame = layout.textViewLayout.frame
+        
+//        self.frame = CGRect(x: 0.0, y: 0.0, width: windowFrame.width, height: layout.origHeight)
+        self.frame.size = CGSize(width: windowFrame.width, height: layout.origHeight)
+        
+//        frame.size = CGSize(width: windowFrame.width, height: layout.origHeight)
     }
     
     /*
