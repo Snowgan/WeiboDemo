@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum XLDateRange {
+    case Today, Yesterday, ThisYear, OtherDay
+}
+
 class XLOriginalStatus: NSObject {
     
     var profileURLString: String!
@@ -21,12 +25,62 @@ class XLOriginalStatus: NSObject {
     
     func convertTime(time: String) -> String{
         
+        var dateString = ""
+        
         //Sun Nov 29 20:07:45 +0800 2015
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "E MMM d HH:mm:ss Z yyyy"
         let date = dateFormatter.dateFromString(time)
-        dateFormatter.dateFormat = "MM-dd"
-        return dateFormatter.stringFromDate(date!)
+        
+        let calendar = NSCalendar.currentCalendar()
+        let unitFlag: NSCalendarUnit = [.Hour, .Minute, .Second]
+        let compts = calendar.components(unitFlag, fromDate: date!, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))
+        switch date!.dateRange() {
+        case .Today:
+            if compts.hour >= 1 {
+                dateString = "\(compts.hour) hours ago"
+            } else if compts.minute >= 1 {
+                dateString = "\(compts.minute) mins ago"
+            } else {
+                dateString = "Just now"
+            }
+        case .Yesterday:
+            dateString = "Yesterday"
+            dateFormatter.dateFormat = "HH:mm"
+            dateString += dateFormatter.stringFromDate(date!)
+        case .ThisYear:
+            dateFormatter.dateFormat = "MM-dd HH:mm"
+            dateString = dateFormatter.stringFromDate(date!)
+        case .OtherDay:
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateString = dateFormatter.stringFromDate(date!)
+        }
+        
+        return dateString
+    }
+    
+}
+
+extension NSDate {
+    
+    func dateRange() -> XLDateRange{
+        let calendar = NSCalendar.currentCalendar()
+        let unitFlag: NSCalendarUnit = [.Day, .Month, .Year]
+        let nowComps = calendar.components(unitFlag, fromDate: NSDate())
+        let selfComps = calendar.components(unitFlag, fromDate: self)
+        
+        if selfComps.year == nowComps.year {
+            if (selfComps.month == nowComps.month) && (selfComps.day == nowComps.day) {
+                return XLDateRange.Today
+            } else if (selfComps.month == nowComps.month) && (selfComps.day + 1 == nowComps.day) {
+                return XLDateRange.Yesterday
+            } else {
+                return XLDateRange.ThisYear
+            }
+        } else {
+            return XLDateRange.OtherDay
+        }
+        
     }
     
 }
