@@ -40,8 +40,10 @@ class XLMultiStatus {
             // Retweet
             if let retweet = curStatus["retweeted_status"].dictionary {
                 let retwStatus = XLRetweetStatus()
-                retwStatus.nameString = retweet["user"]!["name"].string
-                retwStatus.text = retweet["text"]?.string
+                if retweet["user"] != nil {
+                    retwStatus.nameString = retweet["user"]!["name"].string
+                }
+                retwStatus.retweetText = retweet["text"]?.string
                 status.retweet = retwStatus
             }
             

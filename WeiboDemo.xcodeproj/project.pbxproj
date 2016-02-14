@@ -23,6 +23,7 @@
 		3857D5D91C2FF2BB007C5311 /* XLWeiboCellRetweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857D5D81C2FF2BB007C5311 /* XLWeiboCellRetweetView.swift */; };
 		3857D5DB1C2FF4DE007C5311 /* XLRetweetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857D5DA1C2FF4DE007C5311 /* XLRetweetStatus.swift */; };
 		3857D5DD1C304B2B007C5311 /* XLOriginalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857D5DC1C304B2A007C5311 /* XLOriginalStatus.swift */; };
+		38A610401C7070F800A9BB9A /* emoticons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38A6103F1C7070F800A9BB9A /* emoticons.plist */; };
 		38CB24DC1C0AE58000BAF14E /* XLHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB24DB1C0AE58000BAF14E /* XLHomeTableViewController.swift */; };
 		38CB24E31C0B016A00BAF14E /* XLWeiboCellOriginalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB24E21C0B016900BAF14E /* XLWeiboCellOriginalView.swift */; };
 		38DE7A2B1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE7A2A1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift */; };
@@ -33,6 +34,9 @@
 		38E3A8F81C1B065500942E4A /* XLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3A8F71C1B065500942E4A /* XLStatus.swift */; };
 		38E3A8FB1C1B0C8D00942E4A /* XLImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3A8FA1C1B0C8D00942E4A /* XLImageTool.swift */; };
 		38E3A8FD1C1F001100942E4A /* XLMultiStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3A8FC1C1F001100942E4A /* XLMultiStatus.swift */; };
+		38E533EB1C5B6C5000B08F19 /* XLAttributedTextLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E533EA1C5B6C5000B08F19 /* XLAttributedTextLink.swift */; };
+		38E533ED1C5E372F00B08F19 /* XLBasicStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E533EC1C5E372E00B08F19 /* XLBasicStatus.swift */; };
+		38E533EF1C60974700B08F19 /* XLWeiboTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E533EE1C60974700B08F19 /* XLWeiboTextView.swift */; };
 		4EA6DEBC91BE1320A5F79B50 /* Pods_WeiboDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D9F1C99993AF94B736FA1A /* Pods_WeiboDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +81,7 @@
 		3857D5D81C2FF2BB007C5311 /* XLWeiboCellRetweetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWeiboCellRetweetView.swift; sourceTree = "<group>"; };
 		3857D5DA1C2FF4DE007C5311 /* XLRetweetStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLRetweetStatus.swift; sourceTree = "<group>"; };
 		3857D5DC1C304B2A007C5311 /* XLOriginalStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLOriginalStatus.swift; sourceTree = "<group>"; };
+		38A6103F1C7070F800A9BB9A /* emoticons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoticons.plist; sourceTree = "<group>"; };
 		38CB24DB1C0AE58000BAF14E /* XLHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLHomeTableViewController.swift; sourceTree = "<group>"; };
 		38CB24E21C0B016900BAF14E /* XLWeiboCellOriginalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWeiboCellOriginalView.swift; sourceTree = "<group>"; };
 		38D9F1C99993AF94B736FA1A /* Pods_WeiboDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiboDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +93,9 @@
 		38E3A8F71C1B065500942E4A /* XLStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLStatus.swift; sourceTree = "<group>"; };
 		38E3A8FA1C1B0C8D00942E4A /* XLImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLImageTool.swift; sourceTree = "<group>"; };
 		38E3A8FC1C1F001100942E4A /* XLMultiStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLMultiStatus.swift; sourceTree = "<group>"; };
+		38E533EA1C5B6C5000B08F19 /* XLAttributedTextLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLAttributedTextLink.swift; sourceTree = "<group>"; };
+		38E533EC1C5E372E00B08F19 /* XLBasicStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLBasicStatus.swift; sourceTree = "<group>"; };
+		38E533EE1C60974700B08F19 /* XLWeiboTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLWeiboTextView.swift; sourceTree = "<group>"; };
 		5B5676C0E73E531416CF4D04 /* Pods-WeiboDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiboDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiboDemo/Pods-WeiboDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A12DC1B5498925FB72793EFA /* Pods-WeiboDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiboDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiboDemo/Pods-WeiboDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +167,7 @@
 				381DA6FF1BFA0E9B00BD232C /* Assets.xcassets */,
 				381DA7011BFA0E9B00BD232C /* LaunchScreen.storyboard */,
 				381DA7041BFA0E9B00BD232C /* Info.plist */,
+				38A6103F1C7070F800A9BB9A /* emoticons.plist */,
 				381DA7261BFA0EEE00BD232C /* WeiboDemo-Bridging-Header.h */,
 				381DA6FC1BFA0E9B00BD232C /* WeiboDemo.xcdatamodeld */,
 				38DE7A2E1C0B2D7C0044068B /* XLCommonFile.swift */,
@@ -219,6 +228,7 @@
 				3801CAC41C0B027600613AC5 /* XLWeiboCell.swift */,
 				38CB24E21C0B016900BAF14E /* XLWeiboCellOriginalView.swift */,
 				3857D5D81C2FF2BB007C5311 /* XLWeiboCellRetweetView.swift */,
+				38E533EE1C60974700B08F19 /* XLWeiboTextView.swift */,
 				3857D5D21C2E83B9007C5311 /* XLWeiboCellActionView.swift */,
 				38DE7A2A1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift */,
 			);
@@ -229,7 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				38E3A8F71C1B065500942E4A /* XLStatus.swift */,
+				38E533EA1C5B6C5000B08F19 /* XLAttributedTextLink.swift */,
 				3857D5DC1C304B2A007C5311 /* XLOriginalStatus.swift */,
+				38E533EC1C5E372E00B08F19 /* XLBasicStatus.swift */,
 				3857D5DA1C2FF4DE007C5311 /* XLRetweetStatus.swift */,
 				3857D5D41C2E95A9007C5311 /* XLWeiboCellLayout.swift */,
 				38E3A8F51C1B051500942E4A /* XLWeiboCellOriginalLayout.swift */,
@@ -364,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A610401C7070F800A9BB9A /* emoticons.plist in Resources */,
 				381DA7031BFA0E9B00BD232C /* LaunchScreen.storyboard in Resources */,
 				381DA7001BFA0E9B00BD232C /* Assets.xcassets in Resources */,
 				381DA6FB1BFA0E9B00BD232C /* Main.storyboard in Resources */,
@@ -439,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E533ED1C5E372F00B08F19 /* XLBasicStatus.swift in Sources */,
 				38CB24E31C0B016A00BAF14E /* XLWeiboCellOriginalView.swift in Sources */,
 				381DA6FE1BFA0E9B00BD232C /* WeiboDemo.xcdatamodeld in Sources */,
 				38DE7A321C0B326A0044068B /* XLWelcomeViewController.swift in Sources */,
@@ -447,6 +461,7 @@
 				3857D5D91C2FF2BB007C5311 /* XLWeiboCellRetweetView.swift in Sources */,
 				38E3A8F61C1B051500942E4A /* XLWeiboCellOriginalLayout.swift in Sources */,
 				38DE7A2B1C0B1C4E0044068B /* XLWeiboCellRightTopButton.swift in Sources */,
+				38E533EB1C5B6C5000B08F19 /* XLAttributedTextLink.swift in Sources */,
 				38CB24DC1C0AE58000BAF14E /* XLHomeTableViewController.swift in Sources */,
 				3857D5D51C2E95A9007C5311 /* XLWeiboCellLayout.swift in Sources */,
 				381DA6F61BFA0E9B00BD232C /* AppDelegate.swift in Sources */,
@@ -455,6 +470,7 @@
 				3801CAC51C0B027600613AC5 /* XLWeiboCell.swift in Sources */,
 				3857D5D71C2E965A007C5311 /* XLWeiboCellRetweetLayout.swift in Sources */,
 				381DA7281BFB7B7B00BD232C /* XLTabBarController.swift in Sources */,
+				38E533EF1C60974700B08F19 /* XLWeiboTextView.swift in Sources */,
 				3857D5DB1C2FF4DE007C5311 /* XLRetweetStatus.swift in Sources */,
 				38E3A8FB1C1B0C8D00942E4A /* XLImageTool.swift in Sources */,
 				381DA72A1BFCB7C500BD232C /* XLTabBar.swift in Sources */,

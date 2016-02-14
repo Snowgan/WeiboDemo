@@ -84,7 +84,7 @@ class XLHomeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let cellH = homeStatuses.statusLayoutArr[indexPath.row].height
-        print(cellH)
+//        print(cellH)
         return cellH + 31 + 7
     }
     /*

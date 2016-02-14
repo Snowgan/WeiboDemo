@@ -8,7 +8,7 @@
 
 import Foundation
 
-class XLAttributedTextLink {
+class XLAttributedTextLink: NSObject {
     
     var range: NSRange
     

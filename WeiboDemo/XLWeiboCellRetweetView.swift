@@ -30,19 +30,20 @@ class XLWeiboCellRetweetView: UIView {
         }
     }
     
-    var textView: UITextView!
+    var textView: XLWeiboTextView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.backgroundColor = retweetColor
         
-        let textV = UITextView()
+        let textV = XLWeiboTextView()
         textV.backgroundColor = UIColor.clearColor()
         textV.editable = false
         textV.scrollEnabled = false
         textV.textContainerInset = UIEdgeInsetsZero
         textV.textContainer.lineFragmentPadding = 0
+//        textV.userInteractionEnabled = false
         self.addSubview(textV)
         self.textView = textV
     }
@@ -52,7 +53,9 @@ class XLWeiboCellRetweetView: UIView {
     }
     
     func setupStatus(status: XLRetweetStatus) {
-        textView.text = status.retweetText
+//        textView.text = status.retweetText
+        textView.attributedText = status.attributedText
+        textView.links = status.links
     }
     
     func setupLayout(layout: XLWeiboCellRetweetLayout) {

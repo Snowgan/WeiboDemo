@@ -14,8 +14,10 @@ class XLWeiboCellOriginalView: UIView {
     var profileImage: UIImageView!
     var nameLabel: UILabel!
     var sourceLable: UILabel!
-    var textView: UITextView!
+    var textView: XLWeiboTextView!
     var rightTopButton: XLWeiboCellRightTopButton!
+//    var tappedLink: XLAttributedTextLink?
+//    var tappedLinkRects: [CGRect]?
     
     var status: XLOriginalStatus! {
         didSet {
@@ -49,11 +51,13 @@ class XLWeiboCellOriginalView: UIView {
         sourceLable = sourceL
         
         //Text
-        let textV = UITextView()
+        let textV = XLWeiboTextView()
         textV.editable = false
         textV.scrollEnabled = false
         textV.textContainerInset = UIEdgeInsetsZero
         textV.textContainer.lineFragmentPadding = 0
+//        textV.userInteractionEnabled = false
+//        textV.dataDetectorTypes = .Link
         self.addSubview(textV)
         textView = textV
         
@@ -61,6 +65,7 @@ class XLWeiboCellOriginalView: UIView {
         let rtBtn = XLWeiboCellRightTopButton()
         self.addSubview(rtBtn)
         rightTopButton = rtBtn
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -75,8 +80,9 @@ class XLWeiboCellOriginalView: UIView {
         
         sourceLable.text = status.source
         
-        textView.text = status.text
-        
+//        textView.text = status.text
+        textView.attributedText = status.attributedText
+        textView.links = status.links
     }
     
     func setupLayout(layout: XLWeiboCellOriginalLayout) {
@@ -103,6 +109,21 @@ class XLWeiboCellOriginalView: UIView {
 //        frame.size = CGSize(width: windowFrame.width, height: layout.origHeight)
     }
     
+//    func addTapShadowForLink(link: XLAttributedTextLink) {
+//        
+//        for rect in tappedLinkRects! {
+//            if rect.width == 0 || rect.height == 0 {
+//                continue
+//            }
+//            let shadowLayer = CALayer()
+//            shadowLayer.frame = rect
+//            shadowLayer.cornerRadius = 3
+//            shadowLayer.backgroundColor = linkShadowColor.CGColor
+//            shadowLayer.opacity = 0.6
+//            textView.layer.addSublayer(shadowLayer)
+//        }
+//    }
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -111,4 +132,77 @@ class XLWeiboCellOriginalView: UIView {
     }
     */
 
+//    func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
+//        return true
+//    }
+    // MARK: - Touch Event Handling
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        let touch = touches.first!
+//        let point = touch.locationInView(textView)
+//        tappedLink = linkAtPoint(point)
+//        if tappedLink == nil {
+//            super.touchesBegan(touches, withEvent: event)
+//        }
+//    }
+//    
+//    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        if let curLink = tappedLink {
+//            let touch = touches.first!
+//            let point = touch.locationInView(textView)
+//            guard curLink == linkAtPoint(point) else {
+//                tappedLink = nil
+//                return
+//            }
+//        } else {
+//            super.touchesMoved(touches, withEvent: event)
+//        }
+//    }
+//    
+//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        if let curLink = tappedLink {
+//            print(curLink.linkValue)
+//            addTapShadowForLink(curLink)
+//            
+//            // To do After Tapping Link
+//            
+//        } else {
+//            super.touchesEnded(touches, withEvent: event)
+//        }
+//    }
+//    
+//    func linkAtPoint(point: CGPoint) -> XLAttributedTextLink? {
+//        var link: XLAttributedTextLink?
+//        
+//        if let links = status.links {
+//            for l in links {
+//                if isLink(l, containPoint: point) {
+//                    link = l
+//                    break
+//                }
+//            }
+//        }
+//        
+//        return link
+//    }
+//    
+//    func isLink(link: XLAttributedTextLink, containPoint point: CGPoint) -> Bool {
+//        var contained = false
+//        textView.selectedRange = link.range
+//        let rects = textView.selectionRectsForRange(textView.selectedTextRange!)
+//        textView.selectedRange = NSRange(location: 0, length: 0)
+//        
+//        for curRect in rects {
+//            let rect = (curRect as! UITextSelectionRect).rect
+//            if rect.width == 0 || rect.height == 0 {
+//                continue
+//            }
+//            if CGRectContainsPoint(rect, point) {
+//                contained = true
+//                tappedLinkRects = rects.map { ($0 as! UITextSelectionRect).rect }
+//                break
+//            }
+//        }
+//        return contained
+//    }
+    
 }

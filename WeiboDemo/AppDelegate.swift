@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WeiboSDKDelegate {
 //        window?.rootViewController = XLTabBarController()
         window?.rootViewController = XLWelcomeViewController()
         
-        window?.tintColor = UIColor(red: 254/255.0, green: 129/255.0, blue: 0, alpha: 1.0)
+        window?.tintColor = themeColor
         
         window?.makeKeyAndVisible()
         

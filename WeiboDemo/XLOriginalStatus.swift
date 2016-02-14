@@ -12,7 +12,7 @@ enum XLDateRange {
     case Today, Yesterday, ThisYear, OtherDay
 }
 
-class XLOriginalStatus: NSObject {
+class XLOriginalStatus: XLBasicStatus {
     
     var profileURLString: String!
     var nameString: String!
@@ -21,7 +21,12 @@ class XLOriginalStatus: NSObject {
     var source: String {
         return convertTime(createTimeString) + " from " + sourceString
     }
-    var text: String!
+//    var text: String!
+//    var attributeText: NSMutableAttributedString {
+//        return addAttributeForText(text)
+//    }
+//    
+//    var links: [XLAttributedTextLink]?
     
     func convertTime(time: String) -> String{
         
@@ -58,6 +63,30 @@ class XLOriginalStatus: NSObject {
         
         return dateString
     }
+    
+//    func addAttributeForText(text: String) -> NSMutableAttributedString {
+//        let attrStr = NSMutableAttributedString(string: text)
+//        let textRange = NSRange(location: 0, length: text.characters.count)
+//        
+//        // Username Tappable
+//        let namePattern = "@[^@\\s]+?[:|\\s]"
+//        let nameRegExp = try! NSRegularExpression(pattern: namePattern, options: NSRegularExpressionOptions(rawValue: 0))
+//        let nameMatchs = nameRegExp.matchesInString(text, options: NSMatchingOptions(rawValue: 0), range: textRange)
+//        if nameMatchs.count != 0 {
+//            links = [XLAttributedTextLink]()
+//        }
+//        for match in nameMatchs {
+//            let range = NSRange(location: match.range.location, length: match.range.length-1)
+//            let link = XLAttributedTextLink(withRange: range)
+//            let valueRange = NSRange(location: match.range.location+1, length: match.range.length-2)
+//            link.linkValue = (text as NSString).substringWithRange(valueRange)
+//            links!.append(link)
+//            print(link.linkValue)
+//            attrStr.addAttributes(link.attributes, range: link.range)
+//        }
+//        
+//        return attrStr
+//    }
     
 }
 

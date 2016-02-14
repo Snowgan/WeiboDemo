@@ -8,13 +8,20 @@
 
 import Foundation
 
-class XLRetweetStatus: NSObject {
+class XLRetweetStatus: XLBasicStatus {
     
     var nameString: String!
-    var text: String!
+//    override var text: String! {
+//        return "@\(nameString): \(retweetText)"
+//    }
     
-    var retweetText: String {
-        return "@\(nameString): \(text)"
+    var retweetText: String! {
+        get {
+            return text
+        }
+        set {
+            text = (nameString != nil) ? "@\(nameString): \(newValue)" : "\(newValue)"
+        }
     }
     
 }
