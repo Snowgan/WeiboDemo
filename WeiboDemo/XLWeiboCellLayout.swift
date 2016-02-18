@@ -16,10 +16,15 @@ class XLWeiboCellLayout {
     
     var retwViewLayout: XLWeiboCellRetweetLayout?
     
+    var picsViewLayout: XLWeiboPicsLayout?
+    
     var height: CGFloat {
         var h = origViewLayout.origHeight
         if retwViewLayout != nil {
             h += retwViewLayout!.retweetHeight
+        }
+        if picsViewLayout != nil {
+            h += picsViewLayout!.picsHeight
         }
         return h
     }
@@ -33,5 +38,8 @@ class XLWeiboCellLayout {
             retwViewLayout = XLWeiboCellRetweetLayout(withStatusData: retweet)
         }
         
+        if let picture = statusData.pictures {
+            picsViewLayout = XLWeiboPicsLayout(withStatusData: picture)
+        }
     }
 }

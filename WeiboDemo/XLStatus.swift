@@ -14,6 +14,8 @@ class XLStatus: NSObject {
     
     var retweet: XLRetweetStatus?
     
+    var pictures: XLPicStatus?
+    
     var repostsCount = 0
     
 }

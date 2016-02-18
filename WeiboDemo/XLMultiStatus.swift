@@ -45,6 +45,11 @@ class XLMultiStatus {
                 }
                 retwStatus.retweetText = retweet["text"]?.string
                 status.retweet = retwStatus
+                if let pics = retweet["pic_urls"]!.array where pics.count != 0 {
+                    status.pictures = picStatusWithJSON(pics, isRetweet: true)
+                }
+            } else if let pics = curStatus["pic_urls"].array where pics.count != 0 {
+                status.pictures = picStatusWithJSON(pics, isRetweet: false)
             }
             
             statusArr.append(status)
@@ -54,6 +59,18 @@ class XLMultiStatus {
 //            let layout = XLWeiboCellOriginalLayout(withStatusData: status)
             statusLayoutArr.append(layout)
         }
+    }
+    
+    func picStatusWithJSON(json: [JSON], isRetweet: Bool) -> XLPicStatus {
+        let picStatus = json.map { (ele: JSON) -> [String: String] in
+            var output = [String: String]()
+            let jsonDic = ele.dictionary!
+            for key in jsonDic.keys {
+                output[key] = jsonDic[key]!.string
+            }
+            return output
+        }
+        return XLPicStatus(withPics: picStatus, retweet: isRetweet)
     }
 }
 

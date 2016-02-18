@@ -21,7 +21,7 @@ class XLWeiboCellOriginalLayout {
     var textViewLayout: (font: UIFont, frame: CGRect)!
     
     var origHeight: CGFloat {
-        return 2*kWeiboCellMargin + kWeiboCellInset + profileImageFrame.height + textViewLayout.frame.height
+        return kWeiboCellMargin + 2*kWeiboCellInset + profileImageFrame.height + textViewLayout.frame.height
     }
     // Profile Image Frame
     

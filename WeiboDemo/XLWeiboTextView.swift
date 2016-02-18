@@ -48,7 +48,7 @@ class XLWeiboTextView: UITextView {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let curLink = tappedLink {
             print(curLink.linkValue)
-            addTapShadowForLink(curLink)
+//            addTapShadowForLink(curLink)
             
             // To do After Tapping Link
             

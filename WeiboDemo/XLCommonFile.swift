@@ -13,14 +13,16 @@ let windowFrame = UIScreen.mainScreen().bounds
 let themeColor = UIColor(red: 254/255.0, green: 129/255.0, blue: 0, alpha: 1.0)
 let bgColor = UIColor(red: 246.0/255.0, green: 246.0/255.0, blue: 246.0/255.0, alpha: 1.0)
 let actionTextColor = UIColor(red: 127.0/255.0, green: 127.0/255.0, blue: 127.0/255.0, alpha: 1.0)
-let retweetColor = UIColor(red: 237.0/255.0, green: 237.0/255.0, blue: 237.0/255.0, alpha: 1.0)
+let retweetColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
 let linkColor = UIColor(red: 68.0/255.0, green: 102.0/255.0, blue: 153.0/255.0, alpha: 1.0)
 let linkShadowColor = UIColor(red: 176.0/255.0, green: 213.0/255.0, blue: 250.0/255.0, alpha: 1.0)
 let windowCenterX = windowFrame.width / 2.0
 let kWeiboCellMargin: CGFloat = 10.0
-let kWeiboCellInset: CGFloat = 7.0
+let kWeiboCellInset: CGFloat = 5.0
 let bodyFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
 let subHeadFont = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+let homePicWH: CGFloat = 76
+let homePicInset: CGFloat = 3.0
 
 // Table View
 let kXLHomeCellIdentifier = "homeTableCell"

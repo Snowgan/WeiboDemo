@@ -15,7 +15,7 @@ class XLWeiboCellRetweetLayout {
     var textViewLayout: (font: UIFont, frame: CGRect)!
     
     var retweetHeight: CGFloat {
-        return 2*kWeiboCellMargin + textViewLayout.frame.height
+        return 2*kWeiboCellInset + textViewLayout.frame.height
     }
     
     init(withStatusData status: XLRetweetStatus) {
@@ -28,7 +28,7 @@ class XLWeiboCellRetweetLayout {
         let textStr: NSString = statusData.retweetText
         let textFont = UIFont.systemFontOfSize(13)
         let textX = kWeiboCellMargin
-        let textY = kWeiboCellMargin
+        let textY = kWeiboCellInset
         let maxW = windowFrame.width - 2 * kWeiboCellMargin
         let maxSize = CGSize(width: maxW, height: CGFloat.max)
         let textSize = textStr.boundingRectWithSize(maxSize, options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: textFont], context: nil).size

@@ -10,13 +10,29 @@ import UIKit
 
 class XLWeiboCell: UITableViewCell {
 
+    var originalView: XLWeiboCellOriginalView!
+    
+    var retweetView: XLWeiboCellRetweetView?
+    
+    var actionView: XLWeiboCellActionView!
+    
+    var picsView: XLWeiboPicsView?
+    
     var layout: XLWeiboCellLayout! {
         didSet {
             originalView.origViewLayout = layout.origViewLayout
             
-            if retweetView != nil {
-                retweetView!.frame.origin.y = layout.origViewLayout.origHeight
-                retweetView!.retwViewLayout = layout.retwViewLayout
+            if let retweetV = retweetView {
+                retweetV.frame.origin.y = layout.origViewLayout.origHeight
+                retweetV.retwViewLayout = layout.retwViewLayout
+            }
+            
+            if let picsV = picsView {
+                picsV.frame.origin.y = layout.origViewLayout.origHeight
+                picsV.picsLayout = layout.picsViewLayout
+                if picsV.status.isRetweet {
+                    picsV.frame.origin.y += retweetView!.retwViewLayout.retweetHeight
+                }
             }
             
             actionView.frame.origin.y = layout.height + 1.0
@@ -38,14 +54,25 @@ class XLWeiboCell: UITableViewCell {
                 retweetView!.removeFromSuperview()
                 retweetView = nil
             }
+            
+//            if picsView != nil {
+//                picsView!.removeFromSuperview()
+//                picsView = nil
+//            }
+            
+            if let pictures = status.pictures {
+                if picsView == nil {
+                    let picsV = XLWeiboPicsView()
+                    contentView.addSubview(picsV)
+                    picsView = picsV
+                }
+                picsView!.status = pictures
+            } else if picsView != nil {
+                picsView!.removeFromSuperview()
+                picsView = nil
+            }
         }
     }
-    
-    var originalView: XLWeiboCellOriginalView!
-    
-    var retweetView: XLWeiboCellRetweetView?
-    
-    var actionView: XLWeiboCellActionView!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -59,30 +86,10 @@ class XLWeiboCell: UITableViewCell {
         let actV = XLWeiboCellActionView(frame: CGRect(x: 0.0, y: 0.0, width: windowFrame.width, height: 30.0))
         self.contentView.addSubview(actV)
         self.actionView = actV
-        
-//        actV.translatesAutoresizingMaskIntoConstraints = false
-//        let actVYConstraint = NSLayoutConstraint(item: actV, attribute: .Top, relatedBy: .Equal, toItem: origV, attribute: .Bottom, multiplier: 1.0, constant: 1.0)
-//        let actVXConstraint = NSLayoutConstraint(item: actV, attribute: .Leading, relatedBy: .Equal, toItem: origV, attribute: .Leading, multiplier: 1.0, constant: 0.0)
-//        self.addConstraints([actVXConstraint, actVYConstraint])
-//        self.addConstraints([actVXConstraint, actVYConstraint])
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-    }
 }
