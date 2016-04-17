@@ -11,20 +11,25 @@ import SwiftyJSON
 
 class XLMultiStatus {
     
+    var lastStatusID: NSNumber
+    
     var statusArr: [XLStatus]!
     
     var statusLayoutArr: [XLWeiboCellLayout]!
     
     init() {
+        lastStatusID = NSNumber(longLong: 0)
         statusArr = [XLStatus]()
         statusLayoutArr = [XLWeiboCellLayout]()
     }
     
     init(withJSON json: JSON) {
-        statusArr = [XLStatus]()
-        statusLayoutArr = [XLWeiboCellLayout]()
         let statuses = json["statuses"]
         let count = statuses.count
+        lastStatusID = statuses[count-1]["id"].numberValue
+        statusArr = [XLStatus]()
+        statusLayoutArr = [XLWeiboCellLayout]()
+        
         for i in 0..<count {
             let status = XLStatus()
             let origStatus = XLOriginalStatus()
@@ -59,6 +64,7 @@ class XLMultiStatus {
 //            let layout = XLWeiboCellOriginalLayout(withStatusData: status)
             statusLayoutArr.append(layout)
         }
+        
     }
     
     func picStatusWithJSON(json: [JSON], isRetweet: Bool) -> XLPicStatus {
