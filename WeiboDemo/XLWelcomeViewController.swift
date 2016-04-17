@@ -28,7 +28,7 @@ class XLWelcomeViewController: UIViewController {
         
         setupSubviews()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didLogin", name: WBTokenDidSetNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didLogin), name: WBTokenDidSetNotification, object: nil)
         
         if NSUserDefaults.standardUserDefaults().objectForKey("accessToken") == nil {
             let request = WBAuthorizeRequest.request() as! WBAuthorizeRequest
@@ -129,10 +129,12 @@ class XLWelcomeViewController: UIViewController {
     func didLogin() {
         let urlString = "https://api.weibo.com/2/users/show.json"
         var queryDic = [String: AnyObject]()
-        queryDic["access_token"] = NSUserDefaults.standardUserDefaults().objectForKey("accessToken")!
-        queryDic["uid"] = NSUserDefaults.standardUserDefaults().objectForKey("userID")!
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        queryDic["access_token"] = userDefaults.objectForKey("accessToken")!
+        queryDic["uid"] = userDefaults.objectForKey("userID")!
         XLWeiboAPI.sharedWeiboAPI.requestWithURL(urlString, params: queryDic) { (json) -> () in
             print("\(json["avatar_large"])")
+            userDefaults.setObject(json["name"].string!, forKey: "userName")
             self.setupView(self.profileView, withImageURLString: json["avatar_large"].string!)
         }
     }

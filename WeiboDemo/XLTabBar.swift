@@ -51,7 +51,7 @@ class XLTabBar: UITabBar {
         for i in 2..<(subviews.count-1) {
             var indexW = i - 2
             if i > 3 {
-                indexW++
+                indexW += 1
             }
             subviews[i].center = CGPoint(x: tabbarItemW*(CGFloat(indexW)+0.5), y: tabbarItamH*0.5)
         }

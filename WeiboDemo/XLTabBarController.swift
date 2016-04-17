@@ -64,9 +64,9 @@ class XLTabBarController: UITabBarController {
         
         childCV.title = title
         
-        if let homecv = childCV as? XLHomeTableViewController {
-            homecv.setNaviBarTitle()
-        }
+//        if let homecv = childCV as? XLHomeTableViewController {
+//            homecv.setNaviBarTitle()
+//        }
         
         childCV.tabBarItem.image = UIImage(named: imageName)
         childCV.tabBarItem.selectedImage = UIImage(named: selectedImageName)
